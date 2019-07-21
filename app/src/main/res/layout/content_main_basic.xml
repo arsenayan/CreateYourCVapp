@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainBasicActivity"
+    tools:showIn="@layout/activity_main_basic">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100sp"
+
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:background="@drawable/screenhk"/>
+
+
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="154dp"
+            android:orientation="horizontal"
+            android:background="@color/colorlightOrange">
+
+
+            <ImageView
+                android:id="@+id/imageViewperson"
+                android:layout_width="150sp"
+                android:layout_height="150sp"
+                android:background="@drawable/cv"
+                />
+
+
+            <LinearLayout
+                android:layout_width="100sp"
+                android:layout_height="150sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nam."
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Snam."
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Phone"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="40sp"
+                    android:layout_height="wrap_content"
+
+                      android:background="@drawable/gmail"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewForName"
+                    android:layout_width="match_parent"
+                    android:layout_height="40sp"
+                    android:gravity="center"
+                    android:hint="Hans"
+                    android:textSize="23sp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/textViewForSName"
+                    android:layout_width="match_parent"
+                    android:layout_height="40sp"
+                    android:gravity="center"
+                    android:hint="Zimmer"
+                    android:textSize="23sp" />
+
+                <TextView
+                    android:id="@+id/textViewForNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="40sp"
+                    android:gravity="center"
+                    android:hint="+3749000000"
+                    android:textSize="23sp" />
+
+                <TextView
+                    android:id="@+id/textViewForEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="30sp"
+                    android:gravity="center"
+                    android:hint=".@gmail.com"
+                    android:textSize="23sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:orientation="horizontal"
+            android:background="@color/colorlightOrange">
+
+            <TextView
+                android:layout_width="60sp"
+                android:layout_height="40sp"
+                android:text="Orien."
+                android:textSize="20sp"
+                android:gravity="center"
+                />
+            <TextView
+                android:id="@+id/textforMaleFemale"
+                android:layout_width="90sp"
+                android:layout_height="40sp"
+                android:text="M/F."
+                android:textSize="20sp"
+                android:gravity="center"
+                />
+
+            <ImageView
+                android:layout_width="37dp"
+                android:layout_height="40sp"
+                 android:background="@drawable/twitteeer" />
+
+            <TextView
+                android:id="@+id/textViewForTwitter"
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:hint="@string/arsenayan1"
+                android:gravity="center"
+                android:textSize="25sp"/>
+
+        </LinearLayout>
+       <LinearLayout
+           android:id="@+id/linearForChangeColor"
+           android:layout_width="match_parent"
+           android:layout_height="250sp"
+           android:orientation="vertical"
+           android:background="@color/colorlightOrange">
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="40sp"
+               android:hint="CAREER HISTORY"
+               android:textStyle="bold"
+               android:textSize="30sp"
+               android:gravity="center"
+               />
+           <TextView
+               android:id="@+id/textViewForCareerHistory"
+               android:layout_width="match_parent"
+               android:layout_height="90sp"
+               android:hint="********"
+               android:textStyle="bold"
+               android:textSize="20sp"
+               android:gravity="center"
+               />
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="40sp"
+               android:hint="EDUCATION SKILLS"
+               android:textStyle="bold"
+               android:textSize="30sp"
+               android:gravity="center"
+               />
+           <TextView
+               android:id="@+id/textViewForEducation"
+               android:layout_width="match_parent"
+               android:layout_height="75sp"
+               android:hint="********"
+               android:textStyle="bold"
+               android:textSize="20sp"
+               android:gravity="center"
+               />
+
+
+
+
+
+
+       </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/screenhk">
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

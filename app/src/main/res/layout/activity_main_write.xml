@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorlightOrange"
+    tools:context=".MainWriteActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80sp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageViewForChangePhoto"
+                android:layout_width="80sp"
+                android:layout_height="match_parent"
+                android:background="@drawable/cv" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Select Here For Change photo "
+                android:textSize="30sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LinerForNameAndSname"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editTextForWriteName"
+                android:layout_width="150dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20sp"
+                android:gravity="center"
+                android:hint="Name" />
+
+            <EditText
+                android:id="@+id/editTextForWriteSName"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20sp"
+                android:gravity="center"
+                android:hint="SName" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LinerForPhone"
+            android:layout_width="match_parent"
+            android:layout_height="490sp"
+            android:orientation="vertical">
+
+
+            <EditText
+                android:id="@+id/editTextForWriteNumber"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:hint="Write here your number like +37490000000"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/editTextForWriteEmail"
+
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20sp"
+                android:gravity="center"
+                android:hint="Write here your Email like hanszimmer@gmail.com" />
+
+            <EditText
+                android:id="@+id/editTextForWriteTwitter"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20sp"
+                android:gravity="center"
+                android:hint="Write here your Twitter like ArsenAyan1" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+
+                android:layout_height="40sp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioBtnMale"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male" />
+
+                <RadioButton
+                    android:id="@+id/radioBtnFemale"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female" />
+
+
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/edittextForhistory1"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:gravity="center"
+                android:hint="Write here your CAREER HISTORY"
+                android:lines="3" />
+
+            <EditText
+                android:id="@+id/edittextForeducation2"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:gravity="center"
+                android:hint="Write here your EDUCATION SKILLS"
+                android:lines="3" />
+
+            <TextView
+                android:id="@+id/textViewForCareerHistoryForChangeSize"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:gravity="center"
+                android:text="PRESS here 3 second  for choose text  size "
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="choose your text color from radio button"
+                android:textSize="22sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioBtnRed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Red"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="25sp" />
+
+                <RadioButton
+                    android:id="@+id/radioBtnGreen"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Green"
+                    android:textColor="@android:color/holo_green_dark"
+
+                    android:textSize="25sp" />
+
+                <RadioButton
+                    android:id="@+id/radioBtnYellow"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yellow"
+                    android:textColor="#ECDB46"
+
+                    android:textSize="25sp" />
+
+                <Button
+                    android:id="@+id/buttonForDone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#9AE93F"
+                    android:text="done" />
+
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
