@@ -160,6 +160,7 @@
             android:orientation="vertical">
 
             <RadioGroup
+                android:id="@+id/radiogrubButtenForColor"
                 android:layout_width="match_parent"
 
                 android:layout_height="wrap_content"
@@ -195,7 +196,7 @@
                     android:textSize="25sp" />
 
                 <Button
-                    android:id="@+id/buttonForDone"
+                    android:id="@+id/buttonForDoneAll"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="#9AE93F"

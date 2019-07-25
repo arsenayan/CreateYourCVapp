@@ -9,10 +9,20 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Objects;
+
+import static com.example.newhomework.ColorType.GRE;
+import static com.example.newhomework.ColorType.RED;
+import static com.example.newhomework.ColorType.YEL;
+import static java.lang.Enum.valueOf;
 
 public class MainBasicActivity extends AppCompatActivity {
 
@@ -24,6 +34,10 @@ public class MainBasicActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main_basic);
+
+
         textViewForName =findViewById(R.id.textViewForName);
         textViewForSName=findViewById(R.id.textViewForSName);
         textViewForNumber=findViewById(R.id.textViewForNumber);
@@ -34,9 +48,6 @@ public class MainBasicActivity extends AppCompatActivity {
         textViewForEducation=findViewById(R.id.textViewForEducation);
 
         imageViewperson=findViewById(R.id.imageViewperson);
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_basic);
 
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -50,6 +61,25 @@ public class MainBasicActivity extends AppCompatActivity {
         });
     }
 
+    private void setType(String str )
+    {
+        LinearLayout v = findViewById(R.id.linearForChangeColor);
+      /*  TextView textViewEdu= findViewById(R.id.edittextForeducation2);
+        TextView textViewHist= findViewById(R.id.edittextForhistory1);*/
+
+        switch (valueOf(str)){
+            case GRE:
+                v.setBackgroundColor( ContextCompat.getColor( getBaseContext(), R.color.colorPrimary));
+                break;
+            case YEL:
+                v.setBackgroundColor( ContextCompat.getColor( getBaseContext(), R.color.colorYellow));
+                break;
+            case RED:
+                v.setBackgroundColor( ContextCompat.getColor( getBaseContext(), R.color.colorAccent));
+                break;
+        }
+    }
+
     public void openActivityforwrite() {
         Intent intent = new Intent(this, MainWriteActivity.class);
         startActivityForResult(intent,1);
@@ -59,9 +89,28 @@ public class MainBasicActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(data==null){
+        if (data == null) {
             return;
-        } String name = data.getStringExtra("name");
-        textViewForName.setText(name);
+
+        } else {
+            Bundle bnd = data.getExtras();
+
+
+            textViewForSName.setText( Objects.requireNonNull( bnd.get( "sname" ) ).toString() );
+            textViewForName.setText( Objects.requireNonNull( bnd.get( "name" ) ).toString() );
+            textViewForCareerHistory.setText( Objects.requireNonNull( bnd.get( "hist" ) ).toString() );
+            textViewForEducation.setText( Objects.requireNonNull( bnd.get( "edu" ) ).toString() );
+            textViewForNumber.setText( Objects.requireNonNull( bnd.get( "numb" ) ).toString() );
+            textViewForEmail.setText(Objects.requireNonNull(bnd.get("mail")).toString());
+            textViewForTwitter.setText(Objects.requireNonNull(bnd.get("twitt")).toString());
+            setType(bnd.getString( "type" ));
+
+
+
+           /* String name = data.getStringExtra("name");
+            textViewForName.setText(name);
+            String sname = data.getStringExtra("sname");
+            textViewForSName.setText(name);*/
+        }
     }
 }

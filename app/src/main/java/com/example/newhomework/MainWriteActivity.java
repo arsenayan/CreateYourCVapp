@@ -3,7 +3,9 @@ package com.example.newhomework;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.MenuItem;
@@ -12,41 +14,46 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
-public class MainWriteActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainWriteActivity extends AppCompatActivity implements View.OnClickListener {
     EditText editTextForWriteName, editTextForWriteSName, editTextForWriteNumber, editTextForWriteEmail,
             editTextForWriteTwitter, edittextForhistory1, edittextForeducation2;
     ImageView imageViewForChangePhoto;
-    RadioButton radioBtnMale, radioBtnFemale, radioBtnGreen, radioBtnRed, radioBtnYellow;
+    RadioButton radioBtnMale, radioBtnFemale, radioBtnGreen, radioBtnRed, radioBtnYellow  ;
+    RadioGroup radioGroupForColor;
     Button buttonForDone;
     TextView textViewForCareerHistoryForChangeSize, textForEducation;
     final int MENU_SIZE_22 = 1;
     final int MENU_SIZE_26 = 2;
     final int MENU_SIZE_30 = 3;
 
+    @SuppressLint("CutPasteId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        editTextForWriteName=findViewById(R.id.editTextForWriteName);
-        editTextForWriteSName=findViewById(R.id.editTextForWriteSName);
-        editTextForWriteNumber=findViewById(R.id.editTextForWriteNumber);
-        editTextForWriteEmail=findViewById(R.id.editTextForWriteEmail);
-        editTextForWriteTwitter=findViewById(R.id.editTextForWriteTwitter);
-        edittextForhistory1=findViewById(R.id.edittextForhistory1);
-
-        imageViewForChangePhoto=findViewById(R.id.imageViewForChangePhoto);
-        radioBtnMale=findViewById(R.id.radioBtnMale);
-        radioBtnFemale=findViewById(R.id.radioBtnFemale);
-        radioBtnGreen=findViewById(R.id.radioBtnGreen);
-        radioBtnRed=findViewById(R.id.radioBtnRed);
-        radioBtnYellow=findViewById(R.id.radioBtnYellow);
-        buttonForDone=findViewById(R.id.buttonForDone);
- buttonForDone.setOnClickListener(this);
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_write);
+
+        editTextForWriteName = findViewById(R.id.editTextForWriteName);
+        editTextForWriteSName = findViewById(R.id.editTextForWriteSName);
+        editTextForWriteNumber = findViewById(R.id.editTextForWriteNumber);
+        editTextForWriteEmail = findViewById(R.id.editTextForWriteEmail);
+        editTextForWriteTwitter = findViewById(R.id.editTextForWriteTwitter);
+        edittextForhistory1 = findViewById(R.id.edittextForhistory1);
+        edittextForeducation2 = findViewById(R.id.edittextForeducation2);
+   radioGroupForColor=findViewById(R.id.radiogrubButtenForColor);
+        imageViewForChangePhoto = findViewById(R.id.imageViewForChangePhoto);
+        radioBtnMale = findViewById(R.id.radioBtnMale);
+        radioBtnFemale = findViewById(R.id.radioBtnFemale);
+        radioBtnGreen = findViewById(R.id.radioBtnGreen);
+        radioBtnRed = findViewById(R.id.radioBtnRed);
+        radioBtnYellow = findViewById(R.id.radioBtnYellow);
+        buttonForDone = findViewById(R.id.buttonForDoneAll);
+
+        buttonForDone.setOnClickListener(this);
+
         if (getActionBar() != null) {
             getActionBar().hide();
         }
@@ -91,9 +98,56 @@ public class MainWriteActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View view) {
-        Intent intent =new Intent();
-        intent.putExtra("name",editTextForWriteName.getText().toString());
+        /*Intent intent = new Intent();
+
+
+            intent.putExtra("name", editTextForWriteName.getText().toString());
+            setResult(RESULT_OK, intent);
+            intent.putExtra("sname", editTextForWriteSName.getText().toString());
+            setResult(RESULT_OK, intent);
+            finish();*/
+
+        sendData();
+    }
+
+    private void sendData() {
+        String strsName = editTextForWriteSName.getText().toString();
+        String strName = editTextForWriteName.getText().toString();
+        String strHistory = edittextForhistory1.getText().toString();
+        String strEducate = edittextForeducation2.getText().toString();
+        String strNumber = editTextForWriteNumber.getText().toString();
+        String StrMail = editTextForWriteEmail.getText().toString();
+        String strTwit = editTextForWriteTwitter.getText().toString();
+ColorStateList radioGreen=radioBtnGreen.getTextColors();
+
+
+
+        ColorType colorType= null;
+ int v = radioGroupForColor.getCheckedRadioButtonId();
+switch (v){
+    case R.id.radioBtnGreen:
+         colorType =ColorType.GRE;
+         break;
+         case R.id.radioBtnRed:
+         colorType =ColorType.RED;
+         break;
+         case R.id.radioBtnYellow:
+         colorType =ColorType.YEL;
+         break;
+}
+        Bundle bnd = new Bundle();
+        bnd.putString("sname", strsName);
+        bnd.putString("name", strName);
+        bnd.putString("hist", strHistory);
+        bnd.putString("edu", strEducate);
+        bnd.putString("numb", strNumber);
+        bnd.putString("mail", StrMail);
+        bnd.putString("twitt", strTwit);
+        bnd.putString( "color" , colorType.toString() );
+
+        Intent intent = new Intent();
+        intent.putExtras(bnd);
         setResult(RESULT_OK, intent);
-        finish();
+        finishAfterTransition();
     }
 }
