@@ -60,7 +60,30 @@ public class MainBasicActivity extends AppCompatActivity {
 
             }
         });
+     FloatingActionButton fabTwit = findViewById(R.id.fabetwitt);
+     fabTwit.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View view) {
+             Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("http://twitter.com"));
+             startActivity(intent);
+         }
+     });   FloatingActionButton fabCall = findViewById(R.id.fabCall);
+     fabCall.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View view) {
+             Intent intent = new Intent(Intent.ACTION_DIAL,Uri.parse("tel:098888888"));
+             startActivity(intent);
+         }
 
+     });
+        FloatingActionButton fabMail = findViewById(R.id.fabemail);
+     fabMail.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View view) {
+             Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("http://gmail.com"));
+             startActivity(intent);
+         }
+     });
 
     }
 
