@@ -1,6 +1,7 @@
 package com.example.newhomework;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -29,7 +30,7 @@ public class MainBasicActivity extends AppCompatActivity {
     TextView textViewForName, textViewForSName, textViewForNumber, textViewForEmail, textforMaleFemale,
             textViewForTwitter, textViewForCareerHistory, textViewForEducation;
     ImageView imageViewperson;
-
+    private final int SECONDACTIVITY = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,15 +60,17 @@ public class MainBasicActivity extends AppCompatActivity {
 
             }
         });
+
+
     }
 
-    private void setType(String str )
+    /*private void setType(String str )
     {
         LinearLayout v = findViewById(R.id.linearForChangeColor);
-      /*  TextView textViewEdu= findViewById(R.id.edittextForeducation2);
-        TextView textViewHist= findViewById(R.id.edittextForhistory1);*/
+      *//*  TextView textViewEdu= findViewById(R.id.edittextForeducation2);
+        TextView textViewHist= findViewById(R.id.edittextForhistory1);*//*
 
-        switch (valueOf(str)){
+        switch ( valueOf(str)){
             case GRE:
                 v.setBackgroundColor( ContextCompat.getColor( getBaseContext(), R.color.colorPrimary));
                 break;
@@ -78,7 +81,7 @@ public class MainBasicActivity extends AppCompatActivity {
                 v.setBackgroundColor( ContextCompat.getColor( getBaseContext(), R.color.colorAccent));
                 break;
         }
-    }
+    }*/
 
     public void openActivityforwrite() {
         Intent intent = new Intent(this, MainWriteActivity.class);
@@ -103,7 +106,9 @@ public class MainBasicActivity extends AppCompatActivity {
             textViewForNumber.setText( Objects.requireNonNull( bnd.get( "numb" ) ).toString() );
             textViewForEmail.setText(Objects.requireNonNull(bnd.get("mail")).toString());
             textViewForTwitter.setText(Objects.requireNonNull(bnd.get("twitt")).toString());
-            setType(bnd.getString( "type" ));
+            Uri URI = Uri.parse(bnd.getString( "uri" ));
+            imageViewperson.setImageURI(URI);
+           // setType(bnd.getString( "type" ));
 
 
 
