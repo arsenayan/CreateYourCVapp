@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/speshscreen"
+    android:background="@drawable/splscshape"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -25,7 +25,16 @@
             android:textSize="60sp"
             android:textStyle="bold" />
 
-        <TextView
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieAnimationView"
+            android:layout_width="match_parent"
+            android:layout_height="300sp"
+
+            android:baselineAligned="false"
+            app:lottie_fileName="animanimanim.json" />
+
+        <!-- <TextView
             android:id="@+id/textview2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,7 +43,7 @@
             android:text="Do you want   to make your CV?"
             android:textAlignment="center"
             android:textColor="@color/colorlightOrangedark"
-            android:textSize="30sp" />
+            android:textSize="30sp" />-->
 
 
     </LinearLayout>

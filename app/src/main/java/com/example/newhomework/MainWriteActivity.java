@@ -159,7 +159,7 @@ public class MainWriteActivity extends AppCompatActivity implements View.OnClick
         bnd.putString("mail", StrMail);
         bnd.putString("twitt", strTwit);
 //        bnd.putString("color", colorType.toString());
-        bnd.putString( "uri" , uripimage.toString() );
+       bnd.putString( "uri" , uripimage.toString() );
         Intent intent = new Intent();
         intent.putExtras(bnd);
         setResult(RESULT_OK, intent);
