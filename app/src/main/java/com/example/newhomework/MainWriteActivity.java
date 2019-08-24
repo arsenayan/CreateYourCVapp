@@ -39,6 +39,7 @@ public class MainWriteActivity extends AppCompatActivity implements View.OnClick
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_write);
+
       //  textviewForClicPhoto = findViewById(R.id.textviewForClicPhoto);
         editTextForWriteName = findViewById(R.id.editTextForWriteName);
         editTextForWriteSName = findViewById(R.id.editTextForWriteSName);

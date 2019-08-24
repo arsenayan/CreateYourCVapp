@@ -18,12 +18,12 @@ public class MainActivity extends AppCompatActivity {
     Animation uptodown1,downtoup;
     LinearLayout linearfirst1,linearsecond2;
     Button btnletsgoo;
-LottieAnimationView animationView;
+//LottieAnimationView animationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        animationView= (LottieAnimationView) findViewById(R.id.lottieAnimationView);
+      //  animationView= (LottieAnimationView) findViewById(R.id.lottieAnimationView);
         setContentView(R.layout.activity_main);
         btnletsgoo=findViewById(R.id.btnletsgo);
         linearfirst1=findViewById(R.id.linearfirst);
