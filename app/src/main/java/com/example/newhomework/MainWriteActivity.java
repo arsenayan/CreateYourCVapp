@@ -61,9 +61,10 @@ public class MainWriteActivity extends AppCompatActivity implements View.OnClick
         findViewById(R.id.textviewForClicPhoto).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 uripimage = null;
-                checkPicture();
-            }
+                checkPicture();}
+
         });
         if (getActionBar() != null) {
             getActionBar().hide();
@@ -108,9 +109,13 @@ public class MainWriteActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void checkPicture() {
+
         Intent intent = new Intent(Intent.ACTION_PICK,
                 android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        startActivityForResult(intent, BROWSEPICTURE);
+if(intent==null){
+    return;
+}else {
+        startActivityForResult(intent, BROWSEPICTURE);}
     }
 
     @Override
@@ -160,7 +165,7 @@ public class MainWriteActivity extends AppCompatActivity implements View.OnClick
         bnd.putString("mail", StrMail);
         bnd.putString("twitt", strTwit);
 //        bnd.putString("color", colorType.toString());
-       bnd.putString( "uri" , uripimage.toString() );
+      bnd.putString( "uri" , uripimage.toString() );
         Intent intent = new Intent();
         intent.putExtras(bnd);
         setResult(RESULT_OK, intent);

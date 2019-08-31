@@ -19,10 +19,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="150sp"
+            android:layout_marginTop="110sp"
             android:text="Hello!!"
             android:textColor="@color/colorlightOrange"
             android:textSize="60sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textview2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+             android:text="Do you want to make your CV now?"
+            android:textColor="@color/colorlightOrange"
+            android:textSize="20sp"
             android:textStyle="bold" />
 <pl.droidsonroids.gif.GifImageView
     android:layout_width="300sp"
